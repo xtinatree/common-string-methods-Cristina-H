@@ -7,16 +7,52 @@ Write a program to:
 Check if the text "JavaScript" is in the string "Learning JavaScript is fun!" using includes.
 Find the position of the word "fun" in the string.
 
+let stringActivty1 = "Learning JavaScript is fun!";
+console.log(stringActivty1.includes("JavaScript")); //returns: true
+console.log(stringActivty1.indexOf("fun"));  //returns: 23
+
+
+
 Activity 2: Transforming Strings
 Convert the string " CODE BOOTCAMP " to lowercase and remove all extra whitespace.
 Replace "BOOTCAMP" with "JavaScript" in the transformed string.
 
+
+let stringAct2 = " CODE BOOTCAMP ";
+let lowerCaseStringAct2 = stringAct2.toLowerCase().trim();
+
+console.log(lowerCaseStringAct2);  //returns: code bootcamp
+
+let newStringAct2 = lowerCaseStringAct2.replace("bootcamp","JavaScript");
+
+console.log(newStringAct2);       //returns: code JavaScript
+
+
+
+
 Activity 3: Breaking Apart a Sentence
 Split the sentence "Coding is fun and educational" into an array of words.
+
+let stringAct3 = "Coding is fun and educational";
+let arrayAct3 = stringAct3.split(" ");
+
+console.log(arrayAct3);   //returns: [ 'Coding', 'is', 'fun', 'and', 'educational' ]
+
+
+
 
 Activity 4: Retrieving Substrings
 Retrieve the first character of "Bootcamp" using charAt.
 Extract the word "camp" from "Bootcamp" using slice.
+
+let textAct4 = "Bootcamp";
+
+console.log(textAct4.charAt(0));    //returns: B
+
+let partialTextAct4 = textAct4.slice(4,9);
+console.log(partialTextAct4);  //returns: camp
+
+
 
 Advanced Challenge
 Write a program to process the following string:
@@ -27,7 +63,32 @@ Extract the customer name.
 Split the order into an array of items.
 Convert the total price to uppercase (e.g., "TOTAL: $20.50").
 
+let challengeString = `Customer: John Doe
+Order: Apple, Banana, Grape
+Total: $20.50`;
 
+let customerLine = challengeString.split("\n") [0];
+let customerName = customerLine.split(": ") [1];
+console.log(customerName); //returns: John Doe
+
+let itemsLine = challengeString.split("\n") [1];
+console.log(itemsLine);   //did a check on the return:     Order: Apple, Banana, Grape
+let fruitsOnly = itemsLine.slice(7);
+
+console.log(fruitsOnly);
+
+let itemsArray = fruitsOnly.split(/[,;]/);
+console.log(itemsArray);  //returns: [ 'Apple', ' Banana', ' Grape' ]
+
+let totalLine = challengeString.split("\n") [2];
+console.log(totalLine); //returns: Total: $20.50
+console.log(totalLine.toUpperCase());   //returns: TOTAL: $20.50
+*/
+
+
+
+
+/*
 Practice Problem #2
 
 Objective
@@ -62,30 +123,38 @@ Complete the following tasks and assign the results to the specified variables. 
 4. Retrieving
   - Retrieve the first character of the trimmed string using charAt and assign the result to a variable named firstCharacter.
   - Extract the word "Bootcamp" from the string using slice and assign the result to a variable named extractedBootcamp.
-
 */
+
+
+
+
+
+
+
+
+
 
 //Starter Code
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript = inputString.includes("JavaScript"); 
+let codingPosition = inputString.indexOf("Coding");
+let startsWithWelcome = inputString.startsWith("Welcome"); //It starts with a space, not Welcome
+let endsWithToday = inputString.endsWith("Today"); // It ends with a space
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString = inputString.toLowerCase(); 
+let uppercaseString = inputString.toUpperCase(); 
+let trimmedString = inputString.trim(); 
+let replacedString = inputString.replace("JavaScript","coding"); 
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = inputString.split(" "); 
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter = inputString.charAt(0); // Your code here
+let extractedBootcamp = inputString.slice(24,32); // Your code here
 
 // Log all results
 console.log({
